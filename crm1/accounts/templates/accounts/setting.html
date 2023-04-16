@@ -1,0 +1,148 @@
+{% extends 'accounts/main.html' %}
+
+<!--Commentssss { user.username }-->
+{% block content %}
+
+<style>
+  .container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+  }
+
+  .row {
+    margin: 0 auto;
+  }
+
+  body {
+    background-color: #222;
+    color: #fff;
+  }
+
+  .profile-pic {
+    width: 100%;
+    height: 400px;
+    border-radius: 50%;
+    border: 1px solid #fff;
+  }
+
+  .card-body {
+    font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+    font-size: 14px;
+    color: #fff;
+    background-color: #222;
+    border-radius: 10px;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.5);
+    padding: 20px;
+  }
+
+  .btn-warning {
+    background-color: #ffc107;
+    color: #fff;
+    border: none;
+    font-size: 14px;
+    font-weight: bold;
+    border-radius: 5px;
+    padding: 10px 20px;
+    margin-bottom: 10px;
+  }
+
+  .profile-pic {
+    border-radius: 50%;
+    width: 100px;
+    height: 100px;
+    object-fit: cover;
+    margin-bottom: 20px;
+  }
+
+  h3 {
+    font-size: 24px;
+    font-weight: bold;
+    color: #fff;
+    margin-bottom: 20px;
+  }
+
+  h5 {
+    font-size: 18px;
+    color: #fff;
+    margin-bottom: 10px;
+  }
+
+  .form-group {
+    margin-bottom: 20px;
+  }
+
+  label {
+    font-weight: bold;
+    display: block;
+    margin-bottom: 5px;
+  }
+
+  input[type="text"],
+  input[type="email"],
+  input[type="file"] {
+    width: 100%;
+    border: none;
+    border-radius: 5px;
+    padding: 10px;
+    font-size: 16px;
+    margin-top: 5px;
+    margin-bottom: 10px;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.5);
+    background-color: #333;
+    color: #fff;
+  }
+
+  input[type="submit"] {
+    background-color: #1877f2;
+    color: #fff;
+    border: none;
+    font-size: 16px;
+    font-weight: bold;
+    border-radius: 5px;
+    padding: 10px 20px;
+    cursor: pointer;
+  }
+
+  input[type="submit"]:hover {
+    background-color: #1357c3;
+  }
+</style>
+
+<br />
+<div class="row">
+  <div
+    class="col-md-3"
+    style="padding: 20px; margin-right: 20px; background-color: #f5f5f5"
+  >
+    <div class="card card-body">
+      <a href="{% url 'home'%}" class="btn btn-warning">&#8592;Back to Home</a>
+      <hr />
+      <h3 style="text-align: center">Account Setting</h3>
+      <hr />
+      <img
+        src="{{request.user.customer.profile_pic.url}}"
+        alt="profile-pic"
+        class="profile-pic"
+      />
+      <h5>Username: {{request.user.username}}</h5>
+      <h5>Email: {{request.user.email}}</h5>
+      <h5>Phone: {{request.user.customer.phone}}</h5>
+    </div>
+  </div>
+  <div class="col-md-9">
+    <div class="card card-body">
+      <form method="post" enctype="multipart/form-data">
+        {% csrf_token %} {{ form.as_p }}
+        <input
+          type="submit"
+          class="btn btn-primary"
+          name="Update Information"
+        />
+      </form>
+    </div>
+  </div>
+</div>
+
+{% endblock content %}

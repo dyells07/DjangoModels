@@ -1,0 +1,36 @@
+{% extends 'accounts/main.html' %}
+
+<!--Commentssss { user.username }-->
+{% block content %} {% include 'accounts/status.html' %}
+
+<div class="row">
+  <div class="col-md">
+    <div class="card card-body">
+      <table class="table table-md">
+        <tr>
+          <th>Product</th>
+          <th>Note</th>
+          <th>Date Ordered</th>
+          <th>Status</th>
+        </tr>
+        {% for order in orders %}
+        <tr>
+          <td>{{ order.product }}</td>
+          <td>{{ order.note }}</td>
+          <td>{{ order.date_created }}</td>
+          <td>{{ order.status }}</td>
+          {% comment %}
+          <td>
+            <a href="" class="btn btn-outline-info btn-sm">Update</a>
+          </td>
+          <td>
+            <a href="" class="btn btn-outline-danger btn-sm">Remove</a>
+          </td>
+          {% endcomment %}
+        </tr>
+        {% endfor %}
+      </table>
+    </div>
+  </div>
+</div>
+{% endblock content %}

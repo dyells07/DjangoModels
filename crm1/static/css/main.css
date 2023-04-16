@@ -1,0 +1,83 @@
+/* #logo {
+      } */
+body {
+  background-color: #ebefd5;
+}
+#total-orders {
+  background-color: #4cb3c7;
+}
+#orders-delivered {
+  background-color: #7abecc;
+}
+#orders-pending {
+  background-color: #7cd1c0;
+}
+/* footer {
+  color: #a2b5cd;
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+/*  height: 2.5rem;            /* Footer height 
+}
+}
+
+footer .bottom {
+  padding: 20px 0;
+  justify-content: space-between;
+}
+footer .links > div {
+  display: grid;
+  margin-bottom: 30px;
+  gap: 10px;
+}
+footer h2 {
+  margin: 0;
+  font-size: 16px;
+  font-weight: 400;
+  color: #f7f7f7;
+}
+footer .legel {
+  font-size: 12px;
+}
+footer .legel a {
+  margin: 0 4px;
+}
+footer .legel span {
+  margin-right: 10px;
+}
+footer .bottom .links {
+  display: flex;
+  gap: 18px;
+}
+@media (max-width< 620px) {
+  footer {
+    flex-direction: column;
+  }
+
+  footer .bottom {
+    gap: 16px;
+    flex-direction: column-reverse;
+  }
+}
+@media (max-width< 620px) {
+  footer {
+    margin: 0 auto;
+    max-width: 600px;
+    padding: 0;
+  }
+}
+footer .bottom .links a {
+  font-size: 24px;
+}
+@media (max-width< 420px) {
+  footer {
+    text-align: center;
+    align-items: center;
+  }
+  footer .top .links {
+    grid-template-columns: 1fr;
+  }
+  footer .bottom {
+    align-items: center;
+  }
+} */

@@ -1,0 +1,29 @@
+{% extends 'accounts/main.html' %} {% load static %} {% block content %}
+
+<form class="modal-content" method="POST">
+  {% csrf_token %}
+  <div class="container">
+    <h1>Delete Item!</h1>
+    <p>Are you sure you want to delete "{{item}}"</p>
+
+    <div class="clearfix">
+      <button
+        type="button"
+        onclick="document.getElementById('id01').style.display='none'"
+        class="cancelbtn"
+      >
+        <a href="{% url 'home' %}">Cancel</a>
+      </button>
+      <button
+        type="submit"
+        onclick="document.getElementById('id01').style.display='none'"
+        class="deletebtn"
+        name="Confirm"
+      >
+        Delete
+      </button>
+    </div>
+  </div>
+</form>
+
+{%endblock content %}

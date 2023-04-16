@@ -1,0 +1,12 @@
+asgiref==3.6.0
+distlib==0.3.6
+djangify==1.0.0
+Django==4.1.7
+django-filter==23.1
+django-php-bridge==0.1.1
+filelock==3.10.7
+phpserialize==1.3
+platformdirs==3.2.0
+sqlparse==0.4.3
+tzdata==2023.3
+virtualenv==20.21.0

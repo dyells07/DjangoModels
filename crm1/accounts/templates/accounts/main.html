@@ -1,0 +1,128 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1, shrink-to-fit=no"
+    />
+
+    <!-- Bootstrap CSS -->
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css"
+      integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm"
+      crossorigin="anonymous"
+    />
+    <link rel="stylesheet" href="{%static 'css/main.css'%}" />
+    <link rel="stylesheet" href="{%static 'css/delete.css'%}" />
+
+    <title>ScareCrow{% block title %}{% endblock title %}</title>
+  </head>
+  <body>
+    <center>
+      
+        
+      </h2>
+    </center>
+
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+      <a class="navbar-brand" href="{% url 'home' %}">
+        <img
+          src="{%static 'images/logo3.png'%}"
+          alt="e-commerce"
+          style="height: 40px; width: 40px"
+      /></a>
+      <button
+        class="navbar-toggler"
+        type="button"
+        data-toggle="collapse"
+        data-target="#navbarNav"
+        aria-controls="navbarNav"
+        aria-expanded="false"
+        aria-label="Toggle navigation"
+      >
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarNav">
+        
+        <ul class="navbar-nav">
+          {% if request.user.is_staff%}
+          <li class="nav-item active">
+            <a class="nav-link" href="{% url 'home' %}">Dashboard</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="{% url 'products'%}">Products</a>
+          </li>
+           {% endif %}
+      
+          {% if request.user.customer%}
+          <li class="nav-item active">
+            <a class="nav-link" href="{%url 'profile'%}">Profile</a>
+          </li>
+          <li class="nav-item active">
+            <a class="nav-link" href="{%url 'settings'%}">userSetting</a>
+          </li>
+          {%endif%}
+        </ul>
+
+        <ul class="navbar-nav ml-auto">
+          <li class="nav-item"></li>
+          <li class="nav-item"></li>
+
+          <li class="nav-item"></li>
+        </ul>
+      </div>
+      <span  style="font-size:18px;color:#fff;margin-right:20px;">
+       Welcome to ScareCrow, <b style="color:yellow;">{{user.username}}</b>
+      <span>
+        <a href="{% url 'logout' %}" class="btn btn-danger">Logout</a>
+      </span>
+    </nav>
+
+    <hr />
+    {% block content %}{% endblock content %}
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script
+      src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
+      integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://cdn.jsdelivr.net/npm/popper.js@1.12.9/dist/umd/popper.min.js"
+      integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/js/bootstrap.min.js"
+      integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
+      crossorigin="anonymous"
+    ></script>
+    <br />
+    <br />
+    <footer class="bg-dark text-center text-white">
+      <!-- Grid container -->
+      <div class="container p-4 pb-0">
+        <!-- Section: Social media -->
+        <section class="mb-4">
+          <!-- Facebook -->
+          <h3>ScareCrow Customer Order Management</h3>
+        </section>
+        <!-- Section: Social media -->
+      </div>
+      <!-- Grid container -->
+
+      <!-- Copyright -->
+      <div class="text-center p-3" style="background-color: rgba(0, 0, 0, 0.2)">
+        ©belongs to
+        <a class="text-white" href="https://mdbootstrap.com/"
+          >ScareCrow Official</a
+        >
+      </div>
+      <!-- Copyright -->
+    </footer>
+  </body>
+</html>
