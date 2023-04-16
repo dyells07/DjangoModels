@@ -23,6 +23,9 @@
 <p align="center">
   This Django project provides a basic understanding of Django models, filters, lookups, user registration, user roles, and a customer and admin interface.
 </p>
+<p align="center">
+  Learned from Youtube: Dennis Ivy
+</p>
 <!-- Features -->
 <h2 align="center">Features</h2>
 <ul>
